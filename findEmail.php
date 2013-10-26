@@ -215,15 +215,15 @@ if(isset($_GET['q'])&&!empty($_GET['q'])) {
   $con = new uomPersonQuery("ou=People", false); 
   $peopleFound = $con->searchPeople($query);
   if(count($peopleFound)-1==1) { 
-    include("result.php");
+    include("templates/result.php");
   } elseif(count($peopleFound)-1>1) {
-    include("results.php");
+    include("templates/results.php");
   } else {
     $error = "Oh dear, I couldn't find anyone by the name or id ".$query;
-    include("form.php");
+    include("templates/form.php");
   }
 } else {
-  include("form.php");
+  include("templates/form.php");
 }
 
 ?>
